@@ -40,82 +40,85 @@ namespace JogoDaVelha
         }
 
 
-        public Display(string prompt, int[] options)
+        public Display(string msg, int[] options)
         {
-            Prompt = prompt;
+            Prompt = msg;
             Options = options;
             SelectedIndex = 0;
             posicao = -1;
             vez = "O";
+            
 
         }
 
         public void Verifica()
         {
+            string msgVitoriaBolinha = "Ganhador é Bolinha\n PRESSIONE ENTER";
+            string msgVitoriaX = "Ganhador X\n PRESSIONE ENTER";
 
             if (marcadosO.Contains(1) && marcadosO.Contains(2) && marcadosO.Contains(3))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosO.Contains(4) && marcadosO.Contains(5) && marcadosO.Contains(6))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosO.Contains(7) && marcadosO.Contains(8) && marcadosO.Contains(9))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosO.Contains(1) && marcadosO.Contains(4) && marcadosO.Contains(7))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosO.Contains(2) && marcadosO.Contains(5) && marcadosO.Contains(8))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosO.Contains(3) && marcadosO.Contains(6) && marcadosO.Contains(9))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosO.Contains(1) && marcadosO.Contains(5) && marcadosO.Contains(9))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosO.Contains(3) && marcadosO.Contains(5) && marcadosO.Contains(7))
             {
-                Console.WriteLine("ganhador é O bolinha");
+                Console.WriteLine($"{msgVitoriaBolinha}");
             }
             else if (marcadosX.Contains(1) && marcadosX.Contains(2) && marcadosX.Contains(3))
             {
-                Console.WriteLine("ganhador é O xiss");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             else if (marcadosX.Contains(4) && marcadosX.Contains(5) && marcadosX.Contains(6))
             {
-                Console.WriteLine("ganhador é O Xis");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             else if (marcadosX.Contains(7) && marcadosX.Contains(8) && marcadosX.Contains(9))
             {
-                Console.WriteLine("ganhador é O Xis");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             else if (marcadosX.Contains(1) && marcadosX.Contains(4) && marcadosX.Contains(7))
             {
-                Console.WriteLine("ganhador é O Xis");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             else if (marcadosX.Contains(2) && marcadosX.Contains(5) && marcadosX.Contains(8))
             {
-                Console.WriteLine("ganhador é O Xis");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             else if (marcadosX.Contains(3) && marcadosX.Contains(6) && marcadosX.Contains(9))
             {
-                Console.WriteLine("ganhador é O Xis");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             else if (marcadosX.Contains(1) && marcadosX.Contains(5) && marcadosX.Contains(9))
             {
-                Console.WriteLine("ganhador é O Xis");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             else if (marcadosX.Contains(3) && marcadosX.Contains(5) && marcadosX.Contains(7))
             {
-                Console.WriteLine("ganhador é O Xis");
+                Console.WriteLine($"{msgVitoriaX}");
             }
             
         }
@@ -126,7 +129,10 @@ namespace JogoDaVelha
         public void OpcoesTela()
         {
             Console.WriteLine(Prompt);
+            if (ultimaJogada == "")
+                ultimaJogada = "X";
             Console.WriteLine($"Vez de {ultimaJogada}");
+
             for (int i = 1; i < Options.Length; i++)
 
             {
@@ -147,7 +153,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(8))
+                            if (!marcados.Contains(9))
                             {
                                 matrizJogo[2, 2] = " ";
                             }
@@ -172,7 +178,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(posicao))
+                            if (!marcados.Contains(1))
                             {
                                 matrizJogo[0, 0] = " ";
                             }
@@ -196,7 +202,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(posicao))
+                            if (!marcados.Contains(2))
                             {
                                 matrizJogo[0, 1] = " ";
                             }
@@ -217,7 +223,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (! marcados.Contains(posicao)) {
+                            if (! marcados.Contains(3)) {
                                 matrizJogo[0, 2] = " ";
                             }
                             
@@ -237,7 +243,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(posicao))
+                            if (!marcados.Contains(4))
                             {
                                 matrizJogo[1, 0] = " ";
                             }
@@ -258,7 +264,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(posicao))
+                            if (!marcados.Contains(5))
                             {
                                 matrizJogo[1, 1] = " ";
                             }
@@ -278,7 +284,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(5))
+                            if (!marcados.Contains(6))
                             {
                                 matrizJogo[1, 2] = " ";
                             }
@@ -298,7 +304,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(6))
+                            if (!marcados.Contains(7))
                             {
                                 matrizJogo[2, 0] = " ";
                             }
@@ -318,7 +324,7 @@ namespace JogoDaVelha
                         }
                         else
                         {
-                            if (!marcados.Contains(7))
+                            if (!marcados.Contains(8))
                             {
                                 matrizJogo[2, 1] = " ";
                             }
@@ -357,7 +363,7 @@ namespace JogoDaVelha
 
                     if (SelectedIndex == Options.Length)
                     {
-                        SelectedIndex = 1;
+                        SelectedIndex = -1;
                     }
                 }
                 else if(keyPressed == ConsoleKey.Spacebar)
