@@ -1,4 +1,4 @@
-# jogoDaVelha
+# Jogo da Velha
 Jogo da velha em C# com matriz e vetor
 
 1 - Para INICIAR Pressione SETA PARA CIMA
